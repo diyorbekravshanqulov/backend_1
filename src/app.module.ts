@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entities/product.entity';
+import { BookModule } from './book/book.module';
+import { Book } from './book/entities/book.entity';
 
 @Module({
   imports: [
@@ -12,10 +14,11 @@ import { Product } from './product/entities/product.entity';
       username: 'root',
       password: 'root',
       database: 'microtest',
-      entities: [Product],
+      entities: [Product, Book],
       synchronize: true,
     }),
     ProductModule,
+    BookModule,
   ],
   controllers: [],
   providers: [],

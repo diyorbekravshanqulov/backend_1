@@ -12,20 +12,20 @@ export class ProductService {
     private readonly productRepo: Repository<Product>,
   ) {}
 
-  create(createProductDto: CreateProductDto) {
+  async create(createProductDto: CreateProductDto) {
     const { title, image } = createProductDto;
     return this.productRepo.save({ title, image });
   }
 
-  findAll() {
+  async findAll() {
     return this.productRepo.find();
   }
 
-  findOne(id: number) {
+  async findOne(id: number) {
     return this.productRepo.findOneBy({ id });
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
+  async update(id: number, updateProductDto: UpdateProductDto) {
     return this.productRepo.update({ id }, updateProductDto);
   }
 
