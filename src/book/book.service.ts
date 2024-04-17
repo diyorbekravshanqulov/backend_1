@@ -13,8 +13,8 @@ export class BookService {
   ) {}
 
   async create(createBookDto: CreateBookDto) {
-    const { title, author, price, publication_year } = createBookDto;
-    return this.bookRepo.save({ title, author, price, publication_year });
+    const { title, author, price, publiccation_year } = createBookDto;
+    return this.bookRepo.save({ title, author, price, publiccation_year });
   }
 
   async findAll() {
